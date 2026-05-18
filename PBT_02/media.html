@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Multimedia Page</title>
+</head>
+<body>
+    <header>
+        <!-- SVG Inline Logo -->
+        <svg width="100" height="40" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg">
+            <rect width="100" height="40" rx="10" fill="navy" />
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white" font-size="14">LOGO</text>
+        </svg>
+    </header>
+
+    <main>
+        <h2>Bộ sưu tập sản phẩm</h2>
+        <div style="display: flex; gap: 20px;">
+            <figure>
+                <img src="https://placehold.co/300x300?text=iPhone+16" alt="iPhone 16 màu xanh" 
+                     width="300" style="max-width: 100%; height: auto;" loading="lazy">
+                <figcaption>iPhone 16 Pro - 30.000.000đ</figcaption>
+            </figure>
+            <figure>
+                <img src="https://placehold.co/300x300?text=Macbook" alt="Macbook M3" 
+                     width="300" style="max-width: 100%; height: auto;" loading="lazy">
+                <figcaption>Macbook Air M3 - 28.000.000đ</figcaption>
+            </figure>
+            <figure>
+                <img src="https://placehold.co/300x300?text=AirPods" alt="AirPods Pro 2" 
+                     width="300" style="max-width: 100%; height: auto;" loading="lazy">
+                <figcaption>AirPods Pro - 6.000.000đ</figcaption>
+            </figure>
+        </div>
+
+        <h3>Video đánh giá</h3>
+        <!-- YouTube Iframe -->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" 
+                title="Review" frameborder="0" loading="lazy" allowfullscreen></iframe>
+
+        <h3>Video tự quản lý (Self-hosted)</h3>
+        <video width="600" controls poster="https://placehold.co/600x300?text=Thumbnail">
+            <source src="video.webm" type="video/webm">
+            <source src="video.mp4" type="video/mp4">
+            Trình duyệt không hỗ trợ video.
+        </video>
+
+        <h3>Nhạc giới thiệu</h3>
+        <audio controls>
+            <source src="intro.mp3" type="audio/mpeg">
+            Trình duyệt không hỗ trợ audio.
+        </audio>
+    </main>
+</body>
+</html>
