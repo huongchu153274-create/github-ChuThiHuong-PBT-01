@@ -1,0 +1,49 @@
+*{box-sizing:border-box}
+body{font-family:Arial,Helvetica,sans-serif;margin:0;color:#222}
+
+/* Mobile-first base */
+.site-header{background:#ff6a00;color:#fff;padding:12px}
+.site-header .inner{display:flex;align-items:center;gap:12px}
+.logo{font-weight:700}
+.nav{display:none;flex:1;gap:12px;justify-content:center}
+.nav a{color:#fff;text-decoration:none;padding:6px}
+.nav.open{display:flex}
+.nav-toggle{background:transparent;border:0;color:#fff;font-size:20px;margin-left:auto}
+
+.site{display:block;padding:12px}
+.sidebar{display:none;margin-bottom:12px}
+.products .grid{display:grid;grid-template-columns:1fr;gap:12px}
+.card{background:#fff;border:1px solid #eee;padding:10px;border-radius:6px;display:flex;flex-direction:column}
+.card img{max-width:100%;height:auto;border-radius:4px}
+.card h4{margin:8px 0 4px;font-size:16px}
+.card .price{color:#d23;margin:0 0 8px}
+.card button{background:#ff6a00;color:#fff;border:0;padding:8px;border-radius:4px;cursor:pointer;margin-top:auto}
+.ads{display:none}
+.site-footer{text-align:center;padding:16px;color:#666}
+
+/* Tablet */
+@media (min-width:768px){
+  .site{display:grid;grid-template-columns:1fr;gap:12px;padding:18px}
+  .nav{display:flex}
+  .nav-toggle{display:none}
+  .sidebar{display:block;background:#fff;padding:12px;border-radius:6px;border:1px solid #eee}
+  .products .grid{grid-template-columns:repeat(2,1fr)}
+  .ads{display:block;background:#fff;padding:12px;border-radius:6px;border:1px solid #eee}
+}
+
+/* Desktop */
+@media (min-width:1024px){
+  body{padding:20px}
+  .site{display:grid;grid-template-columns:200px 1fr 200px;gap:20px;align-items:start;padding:24px}
+  .nav{display:flex}
+  .nav a{color:#fff}
+  .products .grid{grid-template-columns:repeat(4,1fr)}
+  .sidebar{display:block}
+  .ads{display:block}
+  .site-header .inner{max-width:1100px;margin:0 auto}
+  .site-footer{max-width:1100px;margin:20px auto}
+}
+
+/* responsive font sizes */
+html{font-size:14px}
+@media(min-width:768px){html{font-size:15px}} @media(min-width:1024px){html{font-size:16px}}

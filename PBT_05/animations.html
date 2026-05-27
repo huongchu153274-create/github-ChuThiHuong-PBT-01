@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Animations Demo</title>
+  <link rel="stylesheet" href="animations.css">
+</head>
+<body>
+  <main class="demo">
+    <h1>Animations</h1>
+    <section class="cards">
+      <article class="card anim-item"><div class="img" style="background:url(https://placehold.co/300x200);background-size:cover"></div><h3>Item 1</h3><button class="buy">Mua ngay</button></article>
+      <article class="card anim-item"><div class="img" style="background:url(https://placehold.co/300x200);background-size:cover"></div><h3>Item 2</h3><button class="buy">Mua ngay</button></article>
+      <article class="card anim-item"><div class="img" style="background:url(https://placehold.co/300x200);background-size:cover"></div><h3>Item 3</h3><button class="buy">Mua ngay</button></article>
+    </section>
+
+    <div class="spinner"></div>
+
+    <section style="height:800px;margin-top:40px">
+      <h2>Scroll to reveal</h2>
+      <div class="fade-item">This element will fade in when in view.</div>
+    </section>
+  </main>
+
+  <script>
+    // fade-in on scroll (add class when element in viewport)
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in-view') })
+    },{threshold:0.15})
+    document.querySelectorAll('.anim-item, .fade-item').forEach(el=>obs.observe(el))
+  </script>
+</body>
+</html>

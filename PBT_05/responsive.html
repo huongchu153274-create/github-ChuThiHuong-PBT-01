@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Responsive Product Page</title>
+  <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="inner">
+      <div class="logo">ShopTLU</div>
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+      <nav class="nav">
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site">
+    <aside class="sidebar">
+      <h3>Filters</h3>
+      <select class="filter-dropdown">
+        <option>Category</option>
+        <option>Phone</option>
+        <option>Accessories</option>
+      </select>
+      <div class="filters">
+        <label><input type="checkbox"> New</label>
+        <label><input type="checkbox"> Popular</label>
+        <label><input type="checkbox"> On sale</label>
+      </div>
+    </aside>
+
+    <section class="products">
+      <!-- at least 8 cards -->
+      <div class="grid">
+        <!-- generate 8 cards -->
+        <article class="card"><img src="https://placehold.co/300x200" alt=""><h4>Phone A</h4><p class="price">₫10.000</p><button>Mua</button></article>
+        <article class="card"><img src="https://placehold.co/300x200" alt=""><h4>Phone B</h4><p class="price">₫11.000</p><button>Mua</button></article>
+        <article class="card"><img src="https://placehold.co/300x200" alt=""><h4>Phone C</h4><p class="price">₫12.000</p><button>Mua</button></article>
+        <article class="card"><img src="https://placehold.co/300x200" alt=""><h4>Phone D</h4><p class="price">₫13.000</p><button>Mua</button></article>
+        <article class="card"><img src="https://placehold.co/300x200" alt=""><h4>Phone E</h4><p class="price">₫14.000</p><button>Mua</button></article>
+        <article class="card"><img src="https://placehold.co/300x200" alt=""><h4>Phone F</h4><p class="price">₫15.000</p><button>Mua</button></article>
+        <article class="card"><img src="https://placehold.co/300x200" alt=""><h4>Phone G</h4><p class="price">₫16.000</p><button>Mua</button></article>
+        <article class="card"><img src="https://placehold.co/300x200" alt=""><h4>Phone H</h4><p class="price">₫17.000</p><button>Mua</button></article>
+      </div>
+    </section>
+
+    <aside class="ads">ADS</aside>
+  </main>
+
+  <footer class="site-footer">© 2026 ShopTLU</footer>
+
+  <script>
+    // simple toggle for mobile nav
+    const t = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+    t.addEventListener('click', ()=> nav.classList.toggle('open'));
+  </script>
+</body>
+</html>

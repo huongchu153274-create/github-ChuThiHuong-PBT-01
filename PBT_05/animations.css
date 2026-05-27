@@ -1,0 +1,31 @@
+*{box-sizing:border-box}
+body{font-family:Arial,Helvetica,sans-serif;margin:0;padding:20px}
+.demo h1{margin:0 0 16px}
+.cards{display:flex;gap:20px}
+.card{background:#fff;border:1px solid #eee;padding:12px;border-radius:8px;width:300px;display:flex;flex-direction:column;transition:all .3s ease}
+.card .img{height:180px;border-radius:6px;overflow:hidden}
+
+/* Card hover effect */
+.card:hover{transform:translateY(-8px);box-shadow:0 14px 30px rgba(0,0,0,0.15)}
+
+/* Button hover */
+.buy{background:#ff6a00;color:#fff;border:0;padding:10px;border-radius:6px;cursor:pointer;transition:all .25s ease}
+.buy:hover{background:#fff;color:#ff6a00;transform:scale(1.05);border:2px solid #ff6a00}
+
+/* Image zoom */
+.card .img{overflow:hidden}
+.card .img::before{content:'';display:block;width:100%;height:100%;background-size:cover;background-position:center;transition:transform .5s ease}
+.card:hover .img::before{transform:scale(1.1)}
+
+/* spinner */
+.spinner{width:48px;height:48px;border-radius:50%;border:6px solid #eee;border-top-color:#ff6a00;animation:spin 1s linear infinite;margin:20px 0}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* fade-in */
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.fade-item{opacity:0;transform:translateY(20px);transition:opacity .4s,transform .4s}
+.fade-item.in-view{animation:fadeIn .6s forwards}
+
+/* reveal anim for cards */
+.anim-item{opacity:0;transform:translateY(20px)}
+.anim-item.in-view{animation:fadeIn .5s forwards}

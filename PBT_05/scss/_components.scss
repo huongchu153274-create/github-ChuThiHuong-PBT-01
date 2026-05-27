@@ -1,0 +1,24 @@
+@import 'variables';
+@import 'mixins';
+
+body{font-family:$font-primary;color:$secondary-color}
+
+.site-header{background:$primary-color;color:#fff;padding:$spacing-md}
+
+.grid{display:grid;gap:$spacing-md;grid-template-columns:1fr}
+
+.card{
+  @include card-shadow();
+  padding:$spacing-md;background:#fff;display:flex;flex-direction:column;
+  .card-image{height:180px;overflow:hidden;border-radius:6px}
+  .card-title{font-size:1rem;margin:8px 0}
+  &:hover{transform:translateY(-6px)}
+}
+
+/* responsive grid */
+@include respond-to(tablet){
+  .grid{grid-template-columns:repeat(2,1fr)}
+}
+@include respond-to(desktop){
+  .grid{grid-template-columns:repeat(4,1fr)}
+}
