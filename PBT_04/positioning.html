@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Positioning Playground</title>
+  <link rel="stylesheet" href="positioning.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">ShopTLU</div>
+      <nav class="nav">
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="sidebar-inner">
+          <h3>Filters</h3>
+          <p>Some filter options</p>
+          <ul>
+            <li><label><input type="checkbox"> Option A</label></li>
+            <li><label><input type="checkbox"> Option B</label></li>
+            <li><label><input type="checkbox"> Option C</label></li>
+          </ul>
+        </div>
+      </aside>
+
+      <section class="content">
+        <h1>Sản phẩm</h1>
+        <div class="products">
+          <!-- Repeat cards to create scroll -->
+          <article class="card">
+            <div class="img"></div>
+            <h3>Product 1</h3>
+            <p>Price: 1000</p>
+            <button>Buy</button>
+            <span class="badge">HOT</span>
+          </article>
+
+          <!-- generate many cards -->
+          <!-- copy several times -->
+          <article class="card"><div class="img"></div><h3>Product 2</h3><p>Price: 2000</p><button>Buy</button><span class="badge">HOT</span></article>
+          <article class="card"><div class="img"></div><h3>Product 3</h3><p>Price: 3000</p><button>Buy</button><span class="badge">HOT</span></article>
+          <article class="card"><div class="img"></div><h3>Product 4</h3><p>Price: 4000</p><button>Buy</button><span class="badge">HOT</span></article>
+          <article class="card"><div class="img"></div><h3>Product 5</h3><p>Price: 5000</p><button>Buy</button><span class="badge">HOT</span></article>
+          <article class="card"><div class="img"></div><h3>Product 6</h3><p>Price: 6000</p><button>Buy</button><span class="badge">HOT</span></article>
+          <article class="card"><div class="img"></div><h3>Product 7</h3><p>Price: 7000</p><button>Buy</button><span class="badge">HOT</span></article>
+          <article class="card"><div class="img"></div><h3>Product 8</h3><p>Price: 8000</p><button>Buy</button><span class="badge">HOT</span></article>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <button id="toTop" title="Top">↑</button>
+
+  <footer class="site-footer">
+    <p>Footer content</p>
+  </footer>
+
+  <script>
+    // scroll to top
+    const btn = document.getElementById('toTop');
+    btn.addEventListener('click', ()=> window.scrollTo({top:0,behavior:'smooth'}));
+    window.addEventListener('scroll', ()=>{
+      btn.style.display = window.scrollY > 200 ? 'block' : 'none';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+*{box-sizing:border-box}
+body{font-family:Arial,Helvetica,sans-serif;margin:0;padding:0 20px}
+
+.navbar{display:flex;align-items:center;gap:20px;min-height:64px}
+.navbar .logo{font-weight:700}
+.menu{list-style:none;display:flex;gap:24px;margin:0;padding:0;flex:1;justify-content:center}
+.menu li a{color:#222;text-decoration:none;padding:8px}
+.menu li a:hover{text-decoration:underline;color:#d23}
+.auth{display:flex;gap:8px}
+.btn{padding:8px 12px;border:1px solid #ccc;background:#fff;cursor:pointer}
+.btn.primary{background:#d23;color:#fff;border-color:#d23}
+
+.catalog{max-width:1100px;margin:20px auto}
+.cards{display:flex;flex-wrap:wrap;gap:20px}
+.card{flex:0 0 calc(25% - 20px);background:#fff;border:1px solid #ddd;padding:12px;border-radius:6px;display:flex;flex-direction:column;min-height:260px;transition:transform .18s,box-shadow .18s}
+.card .thumb{height:120px;background:#eee;border-radius:4px;margin-bottom:8px}
+.card h3{margin:0 0 6px}
+.card .price{margin:0 0 8px;color:#333}
+.card button{margin-top:auto;padding:8px;border:none;background:#ff6a00;color:#fff;border-radius:4px;cursor:pointer}
+.card:hover{transform:translateY(-5px);box-shadow:0 8px 18px rgba(0,0,0,0.12)}
+
+@media(max-width:900px){.card{flex:0 0 calc(50% - 20px)}}
+@media(max-width:520px){.menu{display:none}.card{flex:0 0 100%}}
