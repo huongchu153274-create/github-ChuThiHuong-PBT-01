@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Selectors Test</title>
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; padding: 20px; }
+    .legend { margin-bottom: 12px; }
+    .highlight { outline: 4px solid rgba(255,0,0,0.25); padding: 2px; }
+    .sel-out { margin: 6px 0; padding: 6px; border-radius: 4px; }
+  </style>
+  <script>
+    window.addEventListener('DOMContentLoaded', ()=>{
+      const selectors = [
+        {s:'h1', color:'#ffdddd'},
+        {s:'.price', color:'#ddffdd'},
+        {s:'#app header', color:'#ddddff'},
+        {s:'nav a:first-child', color:'#fff0b3'},
+        {s:'.product.featured h2', color:'#ffd6ff'},
+        {s:'article > p', color:'#e6f7ff'},
+        {s:'a[href="/"]', color:'#ffe6e6'},
+        {s:'.top-bar.dark h1', color:'#f0e6ff'}
+      ];
+      const out = document.getElementById('out');
+      selectors.forEach((t, i)=>{
+        try{
+          const nodes = document.querySelectorAll(t.s);
+          nodes.forEach(n=> n.style.background = t.color);
+          const texts = Array.from(nodes).map(n=> n.textContent.trim()).join(' | ');
+          const div = document.createElement('div');
+          div.className='sel-out';
+          div.textContent = `${t.s} → ${texts || '(no match)'} `;
+          out.appendChild(div);
+        }catch(e){ console.error(e); }
+      });
+    });
+  </script>
+</head>
+<body>
+<h1>Selectors test</h1>
+<div id="app">
+    <header class="top-bar dark">
+        <h1>ShopTLU</h1>
+        <nav>
+            <a href="/" class="active">Home</a>
+            <a href="/products">Products</a>
+            <a href="/about">About</a>
+        </nav>
+    </header>
+    <main>
+        <article class="product">
+            <h2>iPhone 16</h2>
+            <p class="price">25.990.000đ</p>
+            <p>Mô tả sản phẩm...</p>
+        </article>
+        <article class="product featured">
+            <h2>MacBook Pro</h2>
+            <p class="price">45.990.000đ</p>
+            <p>Mô tả sản phẩm...</p>
+        </article>
+    </main>
+</div>
+<h2>Matches</h2>
+<div id="out" class="legend"></div>
+<p>Mỗi selector trên được tô background để kiểm chứng.</p>
+</body>
+</html>

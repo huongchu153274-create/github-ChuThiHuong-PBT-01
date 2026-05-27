@@ -1,0 +1,18 @@
+body{font-family:Arial,Helvetica,sans-serif;padding:20px}
+.container{width:960px;margin:10px 0;padding:0;border:1px solid #eee}
+.container .sidebar{width:300px;padding:20px;border:1px solid #ccc;float:left;background:#fafafa}
+.container .content{width:660px;padding:30px;border:1px solid #ccc;float:left;background:#fff}
+
+/* Clear floats for each example */
+.container:after{content:"";display:block;clear:both}
+
+/* Fix 1: use border-box so padding+border don't add to width */
+.fix1 .sidebar, .fix1 .content{box-sizing:border-box}
+.fix1 .sidebar{width:300px;padding:20px}
+.fix1 .content{width:660px;padding:30px}
+
+/* Fix 2: change widths so content-box math fits */
+.fix2 .sidebar{width:260px;padding:20px}
+.fix2 .content{width:640px;padding:30px}
+
+/* Broken example will show content wrapped because 300+20*2+1 + 660+30*2+1 > 960 */

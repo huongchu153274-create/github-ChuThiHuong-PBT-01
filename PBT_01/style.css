@@ -1,0 +1,36 @@
+/* Global reset */
+* { box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7f7f9;
+  color: #222;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0 20px 40px 20px;
+}
+header {
+  padding: 24px 20px;
+  background: linear-gradient(90deg,#ff6a00,#ff3d00);
+  color: #fff;
+  margin-bottom: 20px;
+}
+header nav a {
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  margin-right: 12px;
+}
+header nav a:hover { text-decoration: underline; color: #fff; }
+header nav a.active { font-weight: 700; text-decoration: underline; }
+
+main { max-width: 900px; margin: 0 auto; }
+
+table { border-collapse: collapse; width: 100%; margin: 12px 0; }
+table th, table td { border: 1px solid #444; padding: 6px 8px; }
+table thead th { background: #333; color: #fff; }
+table tbody tr:nth-child(even) { background: #f0f0f0; }
+table tbody tr:hover { background: #e6f7ff; }
+
+aside#contact { max-width: 900px; margin: 20px auto; }
+footer { background: #222; color: #ddd; text-align: center; padding: 12px; margin-top: 24px; }
+
+/* at least 5 selector types used above: element, id, class, descendant, pseudo-class */

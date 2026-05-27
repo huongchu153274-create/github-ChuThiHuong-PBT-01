@@ -1,0 +1,14 @@
+/* 10 rules from low to high specificity */
+p { color: gray; }                    /* (0,0,1) */
+.text { color: teal; }                /* (0,1,0) */
+#demo { color: olive; }               /* (1,0,0) */
+.highlight { color: purple; }         /* (0,1,0) but later in file */
+p.text { color: brown; }              /* (0,1,1) */
+body p { color: navy; }               /* (0,0,2) */
+p#demo { color: maroon; }             /* (1,0,1) */
+div p.text { color: orange; }         /* (0,1,2) */
+/* Important example */
+.special { color: pink !important; }  /* !important */
+/* Highest specificity by inline would beat these unless !important */
+
+/* Final chosen color will depend on specificity/order; currently #demo (ID) rule will apply: olive */
