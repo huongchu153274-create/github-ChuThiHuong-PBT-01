@@ -92,24 +92,5 @@ PHẦN A — KIỂM TRA ĐỌC HIỂU
 
  Nếu Rule A thêm !important (p { color: black !important; }): !important sẽ vượt qua các khai báo không có !important, nên element sẽ màu đen (quan trọng: nếu có nhiều !important thì specificity giữa các rule !important quyết định — ID !important sẽ thắng class !important, v.v.).
 
- PHẦN B — THỰC HÀNH CODE
-
- Tôi đã tạo các file thực hành trong repository:
-- `PBT_01/style.css` (dùng cho `profile.html`)
-- `PBT_03/selectors_test.html` (kiểm chứng A2)
-- `PBT_03/boxmodel_lab.html`, `PBT_03/boxmodel.css` (B2)
-- `PBT_03/specificity.html`, `PBT_03/specificity.css` (B3)
-- `PBT_03/debug_layout.html`, `PBT_03/debug_layout.css` (C1)
-
- Hướng dẫn tiếp theo (bạn cần mở trang và chụp screenshot DevTools theo yêu cầu):
-- Mở `PBT_03/boxmodel_lab.html` trong trình duyệt, bật DevTools → tab Computed để chụp box model diagram cho mỗi hộp.
-- Mở `PBT_03/specificity.html` để thấy thứ tự rules và màu cuối cùng.
-- Mở `PBT_03/selectors_test.html` để kiểm chứng A2.
-
  PHẦN C — Debug & Suy Luận
-
- Phần C1 & C2 đã có file kiểm chứng `PBT_03/debug_layout.html` và `PBT_03/debug_layout.css`. Vui lòng mở và chụp screenshot kết quả.
-
- ---
- Ghi chú: Tôi đã thêm, sửa các file HTML/CSS liên quan trong workspace để bạn kiểm tra. Nếu muốn, tôi có thể tiếp tục: commit & push các file này lên repo GitHub (đã cấu hình remote), hoặc hướng dẫn cách tạo ảnh chụp màn hình.
 

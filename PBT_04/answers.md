@@ -1,4 +1,3 @@
-# PHIẾU BÀI TẬP 04 — CSS LAYOUT (ĐÁP ÁN)
 
 ## PHẦN A — KIỂM TRA ĐỌC HIỂU (20 điểm)
 
@@ -52,5 +51,4 @@
   Row2: [4][5][6]
   Row3: [7][   ][   ]  (item7 ở cột 1 của hàng 3)
 
----
-Ghi chú: Nếu bạn muốn, tôi sẽ tạo ví dụ HTML/CSS minh họa cho từng trường hợp và mở preview local.
+

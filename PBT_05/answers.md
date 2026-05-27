@@ -1,5 +1,3 @@
-# PHIẾU BÀI TẬP 05 — CSS RESPONSIVE & SCSS (ĐÁP ÁN)
-
 ## PHẦN A — KIỂM TRA ĐỌC HIỂU (20 điểm)
 
 ### Câu A1 (5đ) — Viewport & Mobile-First
@@ -127,4 +125,108 @@ button{ background: $primary-color; color: #fff; }
 
 ---
 
-Nếu bạn muốn, tôi có thể tạo thêm ví dụ SCSS (`PBT_05/styles.scss`) và biên dịch thành `styles.css` để bạn tải lên và kiểm tra.
+## PHẦN C — PHÂN TÍCH (ĐÁP ÁN)
+
+### C1 — Phân tích trang thực tế: Shopee (ví dụ)
+
+Lưu ý: tôi không thể mở DevTools hoặc chụp ảnh trực tiếp trong môi trường này. Dưới đây là phân tích tham khảo dựa trên quan sát phổ biến của các e‑commerce (ví dụ shopee.vn). Bạn có thể chạy chính xác trên trình duyệt của mình và thay các bước "chụp screenshot" theo hướng dẫn.
+
+- Kích thước kiểm tra: Mobile 375px | Tablet 768px | Desktop 1440px
+
+- Navigation thay đổi thế nào?
+  - Desktop (1440px): Header rộng, logo bên trái, ô tìm kiếm lớn ở giữa, biểu tượng giỏ hàng/ứng dụng ở phải; menu chuyên mục ở dạng ngang hoặc mega-menu dropdown khi hover.
+  - Tablet (768px): Header rút gọn; search vẫn hiện nhưng nhỏ hơn; một số menu được gộp vào menu chính; dropdown thay cho hover-based mega menu.
+  - Mobile (375px): Header tối giản: logo + search icon + cart; menu chính ẩn sau hamburger hoặc trình đơn dạng slide/overlay; nhiều liên kết được chuyển vào menu hamburger hoặc bottom sheet.
+
+- Lưới content thay đổi mấy cột?
+  - Desktop: product grid thường 4 cột (hoặc nhiều hơn tùy chiều rộng). Sidebar filters hiện ở trái, ads / recommendations ở phải.
+  - Tablet: transition xuống 2-3 cột (thường 2 cột cho 768px → 1024px range).
+  - Mobile: 1 cột duy nhất để dễ đọc và nhấn.
+
+- Elements bị ẩn trên mobile?
+  - Sidebar filter (ẩn hoặc đưa vào collapsible filter panel).
+  - Một số banner quảng cáo, biểu tượng phụ, văn bản mô tả dài có thể bị rút gọn.
+  - Mega-menu hiển thị dưới dạng hamburger overlay.
+
+- Font size có thay đổi không?
+  - Thường có: base font-size nhỏ hơn trên mobile (ví dụ 14px), tăng dần trên tablet/desktop (15–16px). Headings cũng scale theo breakpoint.
+
+- Tìm @media rules (hướng dẫn):
+  - Mở DevTools → Styles → tìm các rules chứa `@media` (ví dụ `@media (max-width: 767px)` hoặc `@media (min-width: 992px)`).
+  - Thông thường sẽ thấy `@media (min-width: 768px)` để chuyển từ mobile → tablet và `@media (min-width: 1024px)` cho desktop.
+
+---
+
+### C2 — Thiết kế Responsive Strategy (Trang Đặt bàn nhà hàng)
+
+Yêu cầu: vẽ wireframe cho Mobile / Tablet / Desktop + CSS skeleton (mobile-first)
+
+Wireframes (ASCII):
+
+Mobile (<= 767px)
+-----------------
+HEADER (logo + phone)
+HERO (ảnh toàn màn)
+FORM (đặt bàn)  -- đặt sau hero hoặc mở modal khi bấm nút
+GALLERY (6 images, 1 cột)
+MAP (embed) - có thể ẩn hoặc collapse
+FOOTER
+
+Tablet (768px - 1023px)
+-----------------------
+HEADER (logo + phone)
+HERO (ảnh)
+FORM (nằm trên hoặc bên trên gallery)
+GALLERY (2-3 cột)
+MAP (ở dưới hoặc bên cạnh)
+FOOTER
+
+Desktop (>= 1024px)
+-------------------
+HEADER (logo + phone + nav)
+HERO (ảnh lớn full-width)
+MAIN: grid 2 cột - LEFT main (gallery 3 cột), RIGHT sidebar (form + map)
+FOOTER
+
+Chi tiết:
+- Mobile: nên ẩn sidebar phục vụ, hoặc chuyển filter/chi tiết thành modal. Form đặt bàn nên đặt ở vị trí sớm trên mobile hoặc mở bằng modal từ nút sticky.
+- Tablet: gallery 2-3 cột (3 cột nếu ngang lớn), map nếu đủ không gian có thể hiển thị cạnh gallery.
+- Desktop: dùng grid 2 cột: main + sidebar. Sidebar chứa form và thông tin liên hệ; map có thể nằm dưới form hoặc lớn hơn tùy thiết kế.
+
+CSS skeleton (mobile-first):
+
+```css
+/* PASTE into PBT_05/restaurant_skeleton.css */
+*{box-sizing:border-box}
+:root{--gap:16px}
+body{margin:0;font-family:Arial,Helvetica,sans-serif}
+.site{display:grid;grid-template-areas:
+  "header"
+  "hero"
+  "form"
+  "gallery"
+  "map"
+  "footer";gap:var(--gap);padding:16px}
+.header{grid-area:header}
+.hero{grid-area:hero}
+.form{grid-area:form}
+.gallery{grid-area:gallery;display:grid;grid-template-columns:1fr;gap:12px}
+.map{grid-area:map}
+.footer{grid-area:footer}
+
+@media (min-width:768px){
+  .gallery{grid-template-columns:repeat(3,1fr)}
+}
+
+@media (min-width:1024px){
+  .site{grid-template-columns:1fr 360px;grid-template-areas:
+    "header header"
+    "hero hero"
+    "gallery sidebar"
+    "gallery sidebar"
+    "footer footer"}
+  .gallery{grid-template-columns:repeat(3,1fr)}
+  .sidebar{grid-area:sidebar}
+}
+
+.card img{max-width:100%;height:auto}

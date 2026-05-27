@@ -1,0 +1,21 @@
+/* Compiled CSS (approximate) - generated from SCSS partials */
+:root{--primary-color:#ff6a00;--secondary-color:#222;--muted-color:#666;--font-primary:Segoe UI, Tahoma, Geneva, Verdana, sans-serif;--gap:16px}
+*{box-sizing:border-box}
+body{font-family:var(--font-primary);color:var(--secondary-color);margin:0}
+.site-header{background:var(--primary-color);color:#fff;padding:16px;display:flex;align-items:center;justify-content:space-between}
+
+.grid{display:grid;gap:16px;grid-template-columns:1fr}
+
+.card{box-shadow:0 6px 18px rgba(0,0,0,0.08);padding:16px;background:#fff;display:flex;flex-direction:column;transition:transform .18s}
+.card .card-image{height:180px;overflow:hidden;border-radius:6px}
+.card .card-title{font-size:1rem;margin:8px 0}
+.card:hover{transform:translateY(-6px)}
+
+@media (min-width:768px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (min-width:1024px){
+  .grid{grid-template-columns:repeat(4,1fr)}
+}
+
+.card img{max-width:100%;height:auto}
