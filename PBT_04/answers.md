@@ -124,3 +124,9 @@ Lỗi 3: Sidebar bị co lại khi content quá dài
 
 - Giải thích: `flex:0 0 250px` đảm bảo sidebar không co; `min-width:0` cho `.content` cho phép nội dung co đúng giới hạn và overflow xử lý nội dung dài.
 
+## C3 — DevTools kiểm chứng
+
+- Mở `PBT_04/devtools_flexbox.html` và dùng DevTools để kiểm tra container có `display:flex`, các property `gap`, `align-items`, `justify-content`.
+- Screenshot DevTools:  file `screenshots/PBT_04_devtools_flexbox.html.png` để minh hoạ (mô tả vị trí và các thuộc tính flex trên panel Styles/Computed).
+
+
