@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PBT_08 — Functions & Higher Order</title>
+  <style>body{font-family:Arial;padding:20px}pre{background:#f7f7f7;padding:12px;border-radius:6px;white-space:pre-wrap}</style>
+</head>
+<body>
+  <h1>PBT_08 — Functions & Higher Order</h1>
+  <p>Output:</p>
+  <pre id="out"></pre>
+  <script>
+    const out = document.getElementById('out');
+    function write(){ out.textContent += Array.from(arguments).join(' ') + '\n'; }
+    console.log = (...args)=> write(...args);
+  </script>
+  <script src="product_manager.js"></script>
+  <script src="higher_order.js"></script>
+  <script src="shopping_cart.js"></script>
+  <script>
+    // Basic demo calls to show outputs from the provided modules
+    try{
+      if(typeof createProduct === 'function'){
+        const p = createProduct('Demo', 9.99);
+        console.log('createProduct ->', JSON.stringify(p));
+      }
+    }catch(e){ console.log('createProduct error') }
+    try{ if(typeof listProducts === 'function'){ console.log('listProducts ->', JSON.stringify(listProducts().slice(0,3))); } }catch(e){}
+    try{ if(typeof addToCart === 'function'){ addToCart({id:1,name:'Demo',price:9.99}); console.log('cart after add:', JSON.stringify(getCart())); } }catch(e){}
+  </script>
+</body>
+</html>
