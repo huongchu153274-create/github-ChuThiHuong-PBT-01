@@ -1,0 +1,13 @@
+*{box-sizing:border-box}
+body{font-family:Arial,Helvetica,sans-serif;background:#f7f7f9;padding:20px}
+.app{max-width:640px;margin:0 auto;background:#fff;padding:20px;border-radius:8px;box-shadow:0 6px 24px rgba(0,0,0,0.06)}
+h1{margin:0 0 12px}
+#todo-form{display:flex;gap:8px;margin-bottom:12px}
+#todo-form input{flex:1;padding:10px;border:1px solid #ddd;border-radius:6px}
+#todo-form button{padding:10px 14px;border:none;background:#ff6a00;color:#fff;border-radius:6px;cursor:pointer}
+#todo-list{list-style:none;padding:0;margin:0}
+#todo-list li{display:flex;align-items:center;gap:10px;padding:8px;border-bottom:1px solid #f0f0f0}
+#todo-list li.completed{opacity:0.6;text-decoration:line-through}
+#todo-list li button{margin-left:auto;background:transparent;border:0;color:#c00;cursor:pointer}
+.controls{display:flex;gap:8px;margin-top:12px}
+.controls button{padding:8px 10px;border-radius:6px;border:1px solid #ddd;background:#fff;cursor:pointer}
