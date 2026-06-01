@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PBT_07 — JS Basics</title>
+  <style>body{font-family:Arial;padding:20px}pre{background:#f7f7f7;padding:12px;border-radius:6px}</style>
+</head>
+<body>
+  <h1>PBT_07 — JS Basics</h1>
+  <p>Output:</p>
+  <pre id="out"></pre>
+  <script>
+    const out = document.getElementById('out');
+    function write(){ out.textContent += Array.from(arguments).join(' ') + '\n'; }
+    console.log = (...args)=> write(...args);
+  </script>
+  <script src="var_let_const.js"></script>
+  <script src="examples.js"></script>
+</body>
+</html>

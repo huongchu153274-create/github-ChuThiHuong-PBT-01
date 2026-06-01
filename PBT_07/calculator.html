@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="vi">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Calculator Demo</title>
+<style>body{font-family:Arial;padding:20px}pre{background:#f7f7f7;padding:12px;border-radius:6px}</style>
+</head>
+<body>
+  <h1>Calculator Demo</h1>
+  <p>Output:</p>
+  <pre id="out"></pre>
+  <script>const out=document.getElementById('out');function write(){ out.textContent += Array.from(arguments).join(' ') + '\n'; } console.log = (...a)=> write(...a);</script>
+  <script src="calculator.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="vi">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Guess Number Demo</title>
+<style>body{font-family:Arial;padding:20px}pre{background:#f7f7f7;padding:12px;border-radius:6px}button{margin-top:8px}</style>
+</head>
+<body>
+  <h1>Guess Number Demo (simulation)</h1>
+  <p>Output:</p>
+  <pre id="out"></pre>
+  <button id="run">Run Simulation</button>
+  <script>const out=document.getElementById('out');function write(){ out.textContent += Array.from(arguments).join(' ') + '\n'; } console.log = (...a)=> write(...a);</script>
+  <script src="guess.js"></script>
+  <script>
+    document.getElementById('run').addEventListener('click', ()=>{ out.textContent=''; (function(){ const target=7; const guesses=[3,5,9,7]; console.log('Guess number demo: target=', target); for(const g of guesses){ if(g===target){ console.log('Guess',g,'-> correct'); break; } else console.log('Guess',g,'-> wrong'); } })(); });
+  </script>
+</body>
+</html>
