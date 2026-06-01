@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ShopTech - Điện Tử Chất Lượng | Bootstrap Landing</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --primary: #ff6a00; --secondary: #222; }
+        body { font-family: 'Segoe UI', sans-serif; }
+        .navbar { background: linear-gradient(135deg, var(--primary), #ff8c42); box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .navbar-brand { font-weight: 700; font-size: 1.5rem; color: #fff !important; }
+        .nav-link { color: #fff !important; margin: 0 8px; transition: opacity 0.3s; }
+        .nav-link:hover { opacity: 0.8; }
+        .carousel-item img { height: 500px; object-fit: cover; }
+        .carousel-caption { background: rgba(0,0,0,0.5); padding: 20px; border-radius: 8px; }
+        .carousel-caption h5 { font-size: 2rem; font-weight: 700; color: #fff; }
+        .carousel-caption p { font-size: 1.1rem; color: #ddd; }
+        .product-grid { display: grid; gap: 24px; }
+        @media(min-width: 768px) { .product-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media(min-width: 992px) { .product-grid { grid-template-columns: repeat(4, 1fr); } }
+        .card { border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: all 0.3s ease; border-radius: 12px; }
+        .card:hover { transform: translateY(-8px); box-shadow: 0 12px 24px rgba(0,0,0,0.15); }
+        .card-img-top { height: 200px; object-fit: cover; border-radius: 12px 12px 0 0; }
+        .badge { position: absolute; top: 12px; right: 12px; z-index: 10; }
+        .btn-primary { background: var(--primary); border: none; }
+        .btn-primary:hover { background: #e55a00; }
+        .hero-section { background: linear-gradient(135deg, var(--primary), #ff8c42); color: #fff; padding: 80px 20px; text-align: center; }
+        .hero-section h1 { font-size: 3rem; font-weight: 700; margin-bottom: 20px; }
+        .hero-section p { font-size: 1.3rem; margin-bottom: 30px; }
+        footer { background: #222; color: #fff; padding: 40px 20px; }
+        footer h5 { color: var(--primary); font-weight: 700; margin-bottom: 16px; }
+        footer a { color: #ddd; text-decoration: none; transition: color 0.3s; }
+        footer a:hover { color: var(--primary); }
+        .modal-header { background: var(--primary); color: #fff; }
+        .modal-body img { max-width: 100%; margin-bottom: 20px; }
+        .rating { color: #ffc107; }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><i class="bi bi-shop"></i> ShopTech</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="#">Trang chủ</a></li>
+                <li class="nav-item"><a class="nav-link" href="#products">Sản phẩm</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">Giới thiệu</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Liên hệ</a></li>
+            </ul>
+            <div class="ms-3">
+                <button class="btn btn-light btn-sm" data-bs-toggle="offcanvas" data-bs-target="#cart">
+                    🛒 <span class="badge bg-danger">3</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO CAROUSEL -->
+<div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://placehold.co/1200x500/ff6a00/fff?text=Banner+1" class="d-block w-100" alt="">
+            <div class="carousel-caption">
+                <h5>iPhone 16 Pro Max</h5>
+                <p>Công nghệ A18 Pro, Camera siêu đẳng cấp</p>
+                <button class="btn btn-warning">Mua ngay</button>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="https://placehold.co/1200x500/ff8c42/fff?text=Banner+2" class="d-block w-100" alt="">
+            <div class="carousel-caption">
+                <h5>MacBook Pro M4</h5>
+                <p>Performance siêu khủng cho Professionals</p>
+                <button class="btn btn-warning">Khám phá</button>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="https://placehold.co/1200x500/ffa366/fff?text=Banner+3" class="d-block w-100" alt="">
+            <div class="carousel-caption">
+                <h5>Flash Sale 50%</h5>
+                <p>Giảm giá toàn bộ phụ kiện</p>
+                <button class="btn btn-warning">Xem ngay</button>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+</div>
+
+<!-- PRODUCTS SECTION -->
+<section id="products" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5 fw-bold">Sản Phẩm Nổi Bật</h2>
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="card position-relative">
+                <span class="badge bg-danger">-20%</span>
+                <img src="https://placehold.co/250x200/0099ff/fff" class="card-img-top" alt="iPhone 16">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">iPhone 16</h5>
+                    <p class="card-text text-muted">Công nghệ Apple mới nhất</p>
+                    <div class="rating mb-2">⭐⭐⭐⭐⭐ (250)</div>
+                    <div class="mb-3">
+                        <span class="h5 text-danger">₫20.990.000</span>
+                        <span class="text-muted text-decoration-line-through">₫26.990.000</span>
+                    </div>
+                    <button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#productModal1">Xem nhanh</button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="card position-relative">
+                <span class="badge bg-success">Mới</span>
+                <img src="https://placehold.co/250x200/ff9900/fff" class="card-img-top" alt="MacBook Pro">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">MacBook Pro M4</h5>
+                    <p class="card-text text-muted">Hiệu suất siêu khủng</p>
+                    <div class="rating mb-2">⭐⭐⭐⭐⭐ (180)</div>
+                    <div class="mb-3">
+                        <span class="h5 text-danger">₫45.990.000</span>
+                    </div>
+                    <button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#productModal2">Xem nhanh</button>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="card position-relative">
+                <img src="https://placehold.co/250x200/00cc99/fff" class="card-img-top" alt="AirPods Pro">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">AirPods Pro 3</h5>
+                    <p class="card-text text-muted">Âm thanh chuẩn studio</p>
+                    <div class="rating mb-2">⭐⭐⭐⭐⭐ (420)</div>
+                    <div class="mb-3">
+                        <span class="h5 text-danger">₫6.990.000</span>
+                    </div>
+                    <button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#productModal3">Xem nhanh</button>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="card position-relative">
+                <span class="badge bg-warning">Hot</span>
+                <img src="https://placehold.co/250x200/3366ff/fff" class="card-img-top" alt="iPad Air">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">iPad Air 6</h5>
+                    <p class="card-text text-muted">Màn hình Liquid Retina</p>
+                    <div class="rating mb-2">⭐⭐⭐⭐⭐ (315)</div>
+                    <div class="mb-3">
+                        <span class="h5 text-danger">₫15.990.000</span>
+                    </div>
+                    <button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#productModal4">Xem nhanh</button>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="card">
+                <img src="https://placehold.co/250x200/ff3366/fff" class="card-img-top" alt="Samsung S24">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Samsung Galaxy S24</h5>
+                    <p class="card-text text-muted">Flagship Android tốt nhất</p>
+                    <div class="rating mb-2">⭐⭐⭐⭐⭐ (290)</div>
+                    <div class="mb-3">
+                        <span class="h5 text-danger">₫22.990.000</span>
+                    </div>
+                    <button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#productModal5">Xem nhanh</button>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="card">
+                <img src="https://placehold.co/250x200/6633ff/fff" class="card-img-top" alt="Dell XPS">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Dell XPS 15</h5>
+                    <p class="card-text text-muted">Laptop cao cấp cho design</p>
+                    <div class="rating mb-2">⭐⭐⭐⭐⭐ (175)</div>
+                    <div class="mb-3">
+                        <span class="h5 text-danger">₫35.990.000</span>
+                    </div>
+                    <button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#productModal6">Xem nhanh</button>
+                </div>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="card">
+                <img src="https://placehold.co/250x200/33ff99/fff" class="card-img-top" alt="Galaxy Buds">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Galaxy Buds2 Pro</h5>
+                    <p class="card-text text-muted">Tai nghe true wireless</p>
+                    <div class="rating mb-2">⭐⭐⭐⭐⭐ (360)</div>
+                    <div class="mb-3">
+                        <span class="h5 text-danger">₫3.490.000</span>
+                    </div>
+                    <button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#productModal7">Xem nhanh</button>
+                </div>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="card">
+                <img src="https://placehold.co/250x200/ffcc33/fff" class="card-img-top" alt="Xiaomi Pad">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Xiaomi Pad 6 Max</h5>
+                    <p class="card-text text-muted">Tablet giá tốt, chất lượng</p>
+                    <div class="rating mb-2">⭐⭐⭐⭐⭐ (240)</div>
+                    <div class="mb-3">
+                        <span class="h5 text-danger">₫7.990.000</span>
+                    </div>
+                    <button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#productModal8">Xem nhanh</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 mb-4">
+                <h5>Về ShopTech</h5>
+                <p>Chuỗi cửa hàng bán lẻ điện tử uy tín hàng đầu Việt Nam, cung cấp các sản phẩm công nghệ chính hãng.</p>
+            </div>
+            <div class="col-md-3 mb-4">
+                <h5>Hỗ trợ khách hàng</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Hướng dẫn mua hàng</a></li>
+                    <li><a href="#">Chính sách đổi trả</a></li>
+                    <li><a href="#">Bảo hành sản phẩm</a></li>
+                    <li><a href="#">Liên hệ support</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 mb-4">
+                <h5>Thông tin</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Về chúng tôi</a></li>
+                    <li><a href="#">Blog công nghệ</a></li>
+                    <li><a href="#">Chính sách riêng tư</a></li>
+                    <li><a href="#">Điều khoản sử dụng</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 mb-4">
+                <h5>Kết nối</h5>
+                <div>
+                    <a href="#" class="me-3">📱 Facebook</a><br>
+                    <a href="#" class="me-3">🐦 Twitter</a><br>
+                    <a href="#">📷 Instagram</a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="text-center py-3">
+            <p>&copy; 2025 ShopTech. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- PRODUCT MODALS -->
+<div class="modal fade" id="productModal1" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Chi tiết sản phẩm</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <img src="https://placehold.co/300x300/0099ff/fff" alt="iPhone 16">
+                <h4>iPhone 16 Pro Max</h4>
+                <p class="text-muted">Công nghệ Apple mới nhất với chip A18 Pro</p>
+                <p><strong>Giá:</strong> <span class="text-danger fs-5">₫20.990.000</span></p>
+                <p><strong>Đánh giá:</strong> ⭐⭐⭐⭐⭐ (250 đánh giá)</p>
+                <p><strong>Tính năng:</strong> 6.7" display, 256GB storage, 12MP camera, 5G</p>
+                <button class="btn btn-primary btn-lg w-100">Thêm vào giỏ hàng</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="productModal2" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Chi tiết sản phẩm</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <img src="https://placehold.co/300x300/ff9900/fff" alt="MacBook Pro">
+                <h4>MacBook Pro M4</h4>
+                <p class="text-muted">Hiệu suất siêu khủng cho chuyên gia</p>
+                <p><strong>Giá:</strong> <span class="text-danger fs-5">₫45.990.000</span></p>
+                <p><strong>Đánh giá:</strong> ⭐⭐⭐⭐⭐ (180 đánh giá)</p>
+                <p><strong>Tính năng:</strong> M4 chip, 16GB RAM, 512GB SSD, 16" Retina display</p>
+                <button class="btn btn-primary btn-lg w-100">Thêm vào giỏ hàng</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="productModal3" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Chi tiết sản phẩm</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <img src="https://placehold.co/300x300/00cc99/fff" alt="AirPods Pro">
+                <h4>AirPods Pro 3</h4>
+                <p class="text-muted">Âm thanh chuẩn studio với Active Noise Cancellation</p>
+                <p><strong>Giá:</strong> <span class="text-danger fs-5">₫6.990.000</span></p>
+                <p><strong>Đánh giá:</strong> ⭐⭐⭐⭐⭐ (420 đánh giá)</p>
+                <p><strong>Tính năng:</strong> ANC, Spatial audio, 6 hours battery</p>
+                <button class="btn btn-primary btn-lg w-100">Thêm vào giỏ hàng</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="productModal4" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Chi tiết sản phẩm</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <img src="https://placehold.co/300x300/3366ff/fff" alt="iPad Air">
+                <h4>iPad Air 6</h4>
+                <p class="text-muted">Màn hình Liquid Retina chuẩn chuyên gia</p>
+                <p><strong>Giá:</strong> <span class="text-danger fs-5">₫15.990.000</span></p>
+                <p><strong>Đánh giá:</strong> ⭐⭐⭐⭐⭐ (315 đánh giá)</p>
+                <p><strong>Tính năng:</strong> 11" display, M1 chip, 64GB, Apple Pencil support</p>
+                <button class="btn btn-primary btn-lg w-100">Thêm vào giỏ hàng</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="productModal5" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Chi tiết sản phẩm</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <img src="https://placehold.co/300x300/ff3366/fff" alt="Samsung S24">
+                <h4>Samsung Galaxy S24</h4>
+                <p class="text-muted">Flagship Android tốt nhất hiện nay</p>
+                <p><strong>Giá:</strong> <span class="text-danger fs-5">₫22.990.000</span></p>
+                <p><strong>Đánh giá:</strong> ⭐⭐⭐⭐⭐ (290 đánh giá)</p>
+                <p><strong>Tính năng:</strong> 6.1" AMOLED, Snapdragon 8 Gen 3, 256GB</p>
+                <button class="btn btn-primary btn-lg w-100">Thêm vào giỏ hàng</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="productModal6" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Chi tiết sản phẩm</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <img src="https://placehold.co/300x300/6633ff/fff" alt="Dell XPS">
+                <h4>Dell XPS 15</h4>
+                <p class="text-muted">Laptop cao cấp cho designer và developer</p>
+                <p><strong>Giá:</strong> <span class="text-danger fs-5">₫35.990.000</span></p>
+                <p><strong>Đánh giá:</strong> ⭐⭐⭐⭐⭐ (175 đánh giá)</p>
+                <p><strong>Tính năng:</strong> 15.6" InfinityEdge, Intel Core i7, RTX 4060</p>
+                <button class="btn btn-primary btn-lg w-100">Thêm vào giỏ hàng</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="productModal7" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Chi tiết sản phẩm</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <img src="https://placehold.co/300x300/33ff99/fff" alt="Galaxy Buds">
+                <h4>Galaxy Buds2 Pro</h4>
+                <p class="text-muted">Tai nghe true wireless chất lượng cao</p>
+                <p><strong>Giá:</strong> <span class="text-danger fs-5">₫3.490.000</span></p>
+                <p><strong>Đánh giá:</strong> ⭐⭐⭐⭐⭐ (360 đánh giá)</p>
+                <p><strong>Tính năng:</strong> ANC, IPX7 waterproof, 5 hours battery</p>
+                <button class="btn btn-primary btn-lg w-100">Thêm vào giỏ hàng</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="productModal8" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Chi tiết sản phẩm</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <img src="https://placehold.co/300x300/ffcc33/fff" alt="Xiaomi Pad">
+                <h4>Xiaomi Pad 6 Max</h4>
+                <p class="text-muted">Tablet giá tốt, chất lượng cao</p>
+                <p><strong>Giá:</strong> <span class="text-danger fs-5">₫7.990.000</span></p>
+                <p><strong>Đánh giá:</strong> ⭐⭐⭐⭐⭐ (240 đánh giá)</p>
+                <p><strong>Tính năng:</strong> 11.5" IPS LCD, Snapdragon 870, 256GB</p>
+                <button class="btn btn-primary btn-lg w-100">Thêm vào giỏ hàng</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Shopping Cart Sidebar -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="cart">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Giỏ hàng (3)</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="mb-3">
+            <h6>iPhone 16 x1 - ₫20.990.000</h6>
+            <h6>AirPods Pro x2 - ₫13.980.000</h6>
+        </div>
+        <hr>
+        <h5>Tổng cộng: ₫34.970.000</h5>
+        <button class="btn btn-primary w-100 mt-3">Thanh toán</button>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
