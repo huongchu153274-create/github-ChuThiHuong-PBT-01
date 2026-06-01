@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Fetch Demo — PBT_10</title>
+  <style>body{font-family:Arial;padding:20px}pre{background:#f4f4f4;padding:12px;border-radius:6px}</style>
+</head>
+<body>
+  <h1>Fetch Demo — JSONPlaceholder</h1>
+  <p><button id="load">Tải bài viết</button> <button id="clear">Xóa</button></p>
+  <div id="out"></div>
+
+  <script>
+    const out = document.getElementById('out');
+    const load = document.getElementById('load');
+    const clearBtn = document.getElementById('clear');
+
+    async function fetchPosts(){
+      out.innerHTML = '<p>Đang tải...</p>';
+      try{
+        const res = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=5');
+        if(!res.ok) throw new Error('Network response was not ok: ' + res.status);
+        const data = await res.json();
+        out.innerHTML = '<ul>' + data.map(p=>`<li><strong>${p.title}</strong><br><small>${p.body}</small></li>`).join('') + '</ul>';
+      }catch(err){
+        out.innerHTML = `<pre>Error: ${err.message}</pre>`;
+      }
+    }
+
+    load.addEventListener('click', fetchPosts);
+    clearBtn.addEventListener('click', ()=> out.innerHTML='');
+  </script>
+</body>
+</html>

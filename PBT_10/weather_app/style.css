@@ -1,0 +1,7 @@
+body{font-family:Inter,Segoe UI,Arial;background:#f6f7fb;margin:24px}
+.container{max-width:720px;margin:0 auto}
+.card{background:#fff;padding:16px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.status{font-weight:700;margin-top:8px}
+.loading{color:#666}
+.success{color:green}
+.error{color:#c00}

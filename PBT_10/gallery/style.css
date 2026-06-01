@@ -1,0 +1,5 @@
+body{font-family:Inter,Segoe UI,Arial;background:#fafafa;margin:24px}
+.container{max-width:900px;margin:0 auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.img{background:#fff;padding:8px;border-radius:8px}
+.loading{color:#666}.success{color:green}.error{color:#c00}
