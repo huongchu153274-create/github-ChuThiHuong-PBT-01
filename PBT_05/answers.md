@@ -230,3 +230,15 @@ body{margin:0;font-family:Arial,Helvetica,sans-serif}
 }
 
 .card img{max-width:100%;height:auto}
+
+### C3 — SCSS & Screenshots (nộp bài)
+
+- Thư mục `scss/` có các file nguồn: `_variables.scss`, `_mixins.scss`, `_components.scss`, `style.scss`.
+- File đã biên dịch: `scss/style.css` (đã bao gồm trong nộp bài).
+- Screenshots có trong `screenshots/`:
+  - `PBT_05_responsive_mobile_375.png`
+  - `PBT_05_responsive_tablet_768.png`
+  - `PBT_05_responsive_desktop_1440.png`
+  - `PBT_05_animations.html.png`
+
+Các ảnh responsive minh hoạ giao diện tại 3 breakpoint và ảnh animations được dùng để kiểm chứng kết quả.
