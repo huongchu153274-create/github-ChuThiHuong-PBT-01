@@ -1,0 +1,7 @@
+/* Simple styles for profile demo (PBT_03) */
+body{font-family:Arial,Helvetica,sans-serif;margin:20px}
+.top-bar.dark{background:#f3f3f3;padding:12px}
+.profile-card{border:1px solid #ddd;padding:16px;max-width:480px}
+.profile-card h2{margin:0 0 8px}
+.bio{color:#333}
+.meta{color:#666;font-size:0.9rem}

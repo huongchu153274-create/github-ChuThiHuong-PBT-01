@@ -94,3 +94,18 @@ PHẦN A — KIỂM TRA ĐỌC HIỂU
 
  PHẦN C — Debug & Suy Luận
 
+ C1 — Debug layout (debug_layout.html)
+
+ 1) Vấn đề: Nội dung chính bị đẩy xuống dưới sidebar do tổng chiều rộng (width + padding + border) vượt quá không gian chứa khi dùng box-sizing: content-box.
+ 2) Kiểm tra: Mở `debug_layout.html` và xem phần "Broken example" — phần content không nằm cạnh sidebar.
+ 3) Giải pháp:
+	 - Fix 1: Sử dụng `box-sizing: border-box;` cho các phần tử layout để padding và border được tính vào trong width, giúp chiều rộng thực tế không vượt quá giới hạn.
+	 - Fix 2: Giảm width/padding hoặc border của các phần tử (nếu không muốn thay đổi box-sizing).
+ 4) Kết luận: Áp dụng `box-sizing: border-box;` là cách phổ biến hiện nay để tránh lỗi layout liên quan đến padding/border làm tràn kích thước.
+
+ C2 — Kiểm chứng
+
+ - Xem `PBT_03/devtools_boxmodel.html` để minh hoạ box-model (có screenshot trong `screenshots/`).
+ - Các sửa trên đã được nêu trong file `debug_layout.html` (phần Fix 1/2) và ảnh minh hoạ đã được tạo trong thư mục `screenshots/`.
+
+
